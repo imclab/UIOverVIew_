@@ -47,20 +47,24 @@
     self.view.center = CGPointMake(self.view.center.x,bottom + self.view.frame.size.height / 2);
     self.view.hidden = NO;
     // 下からスライドするアニメーション。
-    [UIView animateWithDuration:0.4 animations:^{
-        self.view.center = CGPointMake(self.view.center.x, bottom - self.view.frame.size.height / 2);
-    }];
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         self.view.center = CGPointMake(self.view.center.x, bottom - self.view.frame.size.height / 2);
+                     }];
 }
 
 - (IBAction)close
 {
     // 画面下へスライドするアニメーション。終了時に非表示化する。
     float bottom = self.view.superview.frame.size.height;
-    [UIView animateWithDuration:0.4 animations:^{
-        self.view.center = CGPointMake(self.view.center.x, bottom + self.view.frame.size.height / 2);
-    } completion:^(BOOL finished){
-        self.view.hidden = YES;
-    }];
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                         self.view.center = CGPointMake(self.view.center.x, bottom + self.view.frame.size.height / 2);
+                     }
+                     completion:^(BOOL finished)
+                    {
+                         self.view.hidden = YES;
+                     }];
 }
 
 @end
